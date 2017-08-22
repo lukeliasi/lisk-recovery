@@ -45,7 +45,6 @@ function run(knownWords, wordsLength) {
       let knownWordsArr = knownWords.slice();
       knownWordsArr.splice(position, 0, word);
       let passphrase = knownWordsArr.join(" ");
-      // fragile one hard motion kiwi govern wife degree often paddle width segment
 
       setTimeout(function () {
         testAccount(passphrase, function(error, success, response) {
@@ -59,7 +58,7 @@ function run(knownWords, wordsLength) {
             console.log(passphrase + " (incorrect)");
           }
         });
-      }, 25 * (i + 0.25));
+      }, 25 * (i + 0.1));
     }
   });
 }
