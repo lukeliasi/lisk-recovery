@@ -1,5 +1,6 @@
-# Lisk Passphrase recovery
-Tool to recover a Lisk passphrase with a missing word.
+# Lisk Passphrase Recovery Tool
+A tool to recover a single missing word in a Lisk wallet passphrase.
+Made by Luke Liasi
 
 ![Recovery GIF](https://media.giphy.com/media/3owvJWoKU7Iz6MLjd6/giphy.gif)
 
