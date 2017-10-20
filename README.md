@@ -27,7 +27,10 @@ You should run this tool in Terminal on OSX or cmd.exe or equivalent in Windows.
 Append `test` to the command to run test net mode. `python recovery.py test`. You can use this passphrase with a testnet balance to test: `day start afford analyst vibrant foot tiny curtain tennis pear taxi cause`
 
 ## Road Map
-Enable tool to be able to recover second passphrases.
+- Enable tool to be able to recover second passphrases.
+
+### Help?
+Need help setting up the tool? Email me via lukeliasi@gmail.com and I will reply as soon as possible.
 
 ### Donations
 If this tool worked and recovered overwise lost funds consider donating: **10553198736677725420L**
