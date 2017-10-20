@@ -1,8 +1,10 @@
 import requests
 from termcolor import colored
+import readline
 import time
 import re
 import sys
+import readline
 
 # Parse command line args for test mode
 if len(sys.argv) > 1:
@@ -24,7 +26,8 @@ wordlist = ["abandon","ability","able","about","above","absent","absorb","abstra
 
 print '_' * 50
 print colored('\nLisk passphrase recovery tool to find 1 missing word.', 'green')
-input = raw_input(colored('Enter the 11 words you know, in order. The tool will then try to recover the missing word: ', 'white'))
+print colored('Enter the 11 words you know, in order. The tool will then try to recover the missing word: ', 'white')
+input = raw_input('\n')
 
 # Remove multiple spaces, strip trailing and leading white space, split string into array
 input = re.sub(' +', ' ', input.strip()).split(' ')
@@ -49,7 +52,7 @@ for input_word in input:
 passphrases = []
 failed = []
 
-print 'Building possible passphrases...'
+print '\nBuilding possible passphrases...'
 
 for word in wordlist:   
   passphrases.append(word + ' ' + input[0] + ' ' + input[1] + ' ' + input[2] + ' ' + input[3] + ' ' + input[4] + ' ' + input[5] + ' ' + input[6] + ' ' + input[7] + ' ' + input[8] + ' ' + input[9] + ' ' + input[10])
