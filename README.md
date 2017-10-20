@@ -1,7 +1,8 @@
 # Lisk Passphrase Recovery Tool
 A tool to recover a single missing word in a Lisk wallet passphrase.
 
-![Demo](https://i.imgur.com/XpXF8vz.gif)
+![Demo](https://i.imgur.com/9Cp8cGL.gif)
+
 <iframe src='https://gfycat.com/ifr/RectangularDesertedJoey' frameborder='0' scrolling='no' width='100%' height='100%' style='position:absolute;top:0;left:0' allowfullscreen></iframe>
 
 ## How it works
