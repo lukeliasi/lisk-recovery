@@ -12,7 +12,7 @@ This tool currently can recover a passphrase if you know 11 of the 12 words. Ent
 [python](https://www.python.org/downloads/)
 
 ## Installation
-``git clone git@github.com:lukeliasi/lisk-recovery.git``
+``git clone https://github.com/lukeliasi/lisk-recovery.git``
 
 ``cd lisk-recovery``
 
