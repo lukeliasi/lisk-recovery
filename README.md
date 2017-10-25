@@ -21,7 +21,7 @@ This tool currently can recover a passphrase if you know 11 of the 12 words. Ent
 ## Run
 You should run this tool in Terminal on OSX or cmd.exe or equivalent in Windows. Then when inside the project folder run:
 
-``python recovery.py``
+``python recover.py``
 
 ## Test
 Append `test` to the command to run test net mode. `python recovery.py test`. You can use this passphrase with a testnet balance to test: `day start afford analyst vibrant foot tiny curtain tennis pear taxi cause`
