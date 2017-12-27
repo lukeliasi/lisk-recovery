@@ -5,6 +5,7 @@ import time
 import re
 import sys
 import readline
+import datetime
 
 # Parse command line args for test mode
 if len(sys.argv) > 1:
@@ -92,7 +93,7 @@ for passphrase in passphrases:
       exit()
     else:
       status = " (tried %s of 24576 possible combinations)" % (index + 1)
-      print(colored(passphrases[index], 'red') + colored(status, 'yellow'))
+      print(str(datetime.datetime.now()) + colored(passphrases[index], 'red') + colored(status, 'yellow'))
 
   else:
     print(colored('There was an error connecting to the Lisk API passphrase: ', 'red') + colored(passphrases)[index], 'white') + colored(' not tested.', 'red')
