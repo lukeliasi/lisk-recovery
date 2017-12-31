@@ -54,41 +54,32 @@ const generatePassphrases = (inputs) => {
 }
 
 const testPassphrases = (passphrases) => {
-  stayAwake.prevent((err, data) => {
-    if (err) { console.log(err) }
-    console.log('Starting...'.yellow)
-    let index = 0;
-    const loadWords = () => {
-      if (index < passphrases.length) {
-        let wordToLoad = passphrases[index];
-        const testAccount = () => {
-          const create = lisk.crypto.getPrivateAndPublicKeyFromSecret(wordToLoad);
-          const address = lisk.crypto.getAddress(create.publicKey);
-          const callback = (account) => {
-            if (account.success) {
-              console.log(`Your passphrase has been successfully found! Your passphrase is: ${wordToLoad.magenta}`);
-              console.log('\nIf this tool worked and recovered overwise lost funds consider donating: ' + '10553198736677725420L'.magenta);
-              stayAwake.allow((err, data) => {
-                if (err) { console.log(err) }
-                process.exit()
-              });
-            } else {
-              console.log('NOT: '.red + wordToLoad + ` (tried ${index + 1} of 24576 possible combinations)`.yellow);
-              ++index;
-              loadWords(); 
-            }
+  console.log('Starting...'.yellow)
+  let index = 0;
+  const loadWords = () => {
+    if (index < passphrases.length) {
+      let wordToLoad = passphrases[index];
+      const testAccount = () => {
+        const create = lisk.crypto.getPrivateAndPublicKeyFromSecret(wordToLoad);
+        const address = lisk.crypto.getAddress(create.publicKey);
+        const callback = (account) => {
+          if (account.success) {
+            console.log(`Your passphrase has been successfully found! Your passphrase is: ${wordToLoad.magenta}`);
+            console.log('\nIf this tool worked and recovered overwise lost funds consider donating: ' + '10553198736677725420L'.magenta);
+            process.exit();
+          } else {
+            console.log('NOT: '.red + wordToLoad + ` (tried ${index + 1} of 24576 possible combinations)`.yellow);
+            ++index;
+            loadWords(); 
           }
-          const account = lisk.api({testnet: program.testnet ? true : false}).getAccount(address,  callback);
         }
-        testAccount();
-      } else {
-        console.log('\nSorry, your passphrase could not be found. You must have inputted the know words in the incorrect order or have the wrong words.')
-        stayAwake.allow((err, data) => {
-          if (err) { console.log(err) }
-          process.exit()
-        });
+        const account = lisk.api({testnet: program.testnet ? true : false}).getAccount(address,  callback);
       }
+      testAccount();
+    } else {
+      console.log('\nSorry, your passphrase could not be found. You must have inputted the know words in the incorrect order or have the wrong words.');
+      process.exit();
     }
-    loadWords();
-  });
+  }
+  loadWords();
 }
