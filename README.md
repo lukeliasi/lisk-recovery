@@ -1,7 +1,7 @@
 # Lisk Passphrase Recovery Tool
 A tool to recover a single missing word in a Lisk wallet passphrase.
 
-![Demo](https://j.gifs.com/7LDRwy.gif)
+![Demo](https://media.giphy.com/media/xULW8D7MS96UvVraVO/giphy.gif)
 
 ## How it works
 This tool currently can recover a passphrase if you know 11 of the 12 words. Enter 11 words and it will generate all possible combinations from the BIP 39 word list. This tool will only work if the account has a balance and transactions.
