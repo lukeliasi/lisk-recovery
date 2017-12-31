@@ -1,8 +1,8 @@
 {
-  "name": "test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "lisk-recovery",
+  "version": "1.0.1",
+  "description": "A tool to recover a single missing word in a Lisk wallet passphrase.",
+  "main": "recover.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
