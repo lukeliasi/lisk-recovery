@@ -2,7 +2,6 @@ const lisk = require('lisk-js');
 const program = require('commander');
 const wordlist = require('./bip0039-wordlist');
 const promptly = require('promptly');
-const stayAwake = require('stay-awake');
 const colors = require('colors');
 
 // Testnet passphrase:
