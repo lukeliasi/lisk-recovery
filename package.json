@@ -1,0 +1,19 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.0",
+    "colors": "^1.1.2",
+    "commander": "^2.12.1",
+    "lisk-js": "^0.5.0",
+    "promptly": "^2.2.0",
+    "stay-awake": "^0.0.3"
+  }
+}
