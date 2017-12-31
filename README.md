@@ -23,6 +23,8 @@ You should run this tool in Terminal on OSX or cmd.exe or equivalent in Windows.
 
 ``node recover``
 
+**Note:** This script will pause if your computer sleeps. It is recommended to turn off auto sleep/power saving if you are not using the computer while the script runs.
+
 ## Test
 Append `-t` to the command to run test net mode. `node recover -t`. You can use this passphrase with a testnet balance to test: `day start afford analyst vibrant foot tiny curtain tennis pear taxi cause`
 
