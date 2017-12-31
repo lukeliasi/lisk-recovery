@@ -30,7 +30,6 @@ const validator = (input) => {
   return input;
 };
 
-let input;
 const userInput = () => promptly.prompt('Enter the 11 words you know, in order. The tool will then try to recover the missing word:'.white, { validator: validator }, (err, input) => {
   generatePassphrases(input);
 });
@@ -42,9 +41,9 @@ const generatePassphrases = (inputs) => {
   const passphrases = [];
   wordlist.forEach(word => {
     [...Array(12)].forEach((_, index) => {
-      let test = inputs.slice();
-      test.splice(index, 0, word);
-      const passphrase = test.join(' ');
+      let clone = inputs.slice();
+      clone.splice(index, 0, word);
+      const passphrase = clone.join(' ');
       passphrases.push(passphrase);
     });
   });
@@ -57,22 +56,22 @@ const testPassphrases = (passphrases) => {
   let index = 0;
   const loadWords = () => {
     if (index < passphrases.length) {
-      let wordToLoad = passphrases[index];
+      let passphrase = passphrases[index];
       const testAccount = () => {
-        const create = lisk.crypto.getPrivateAndPublicKeyFromSecret(wordToLoad);
+        const create = lisk.crypto.getPrivateAndPublicKeyFromSecret(passphrase);
         const address = lisk.crypto.getAddress(create.publicKey);
         const callback = (account) => {
           if (account.success) {
-            console.log(`Your passphrase has been successfully found! Your passphrase is: ${wordToLoad.magenta}`);
+            console.log(`Your passphrase has been successfully found! Your passphrase is: ${passphrase.magenta}`);
             console.log('\nIf this tool worked and recovered overwise lost funds consider donating: ' + '10553198736677725420L'.magenta);
             process.exit();
           } else {
-            console.log('NOT: '.red + wordToLoad + ` (tried ${index + 1} of 24576 possible combinations)`.yellow);
+            console.log('NOT: '.red + passphrase + ` (tried ${index + 1} of 24576 possible combinations)`.yellow);
             ++index;
             loadWords(); 
           }
         }
-        const account = lisk.api({testnet: program.testnet ? true : false}).getAccount(address,  callback);
+        const account = lisk.api({testnet: program.testnet ? true : false}).getAccount(address, callback);
       }
       testAccount();
     } else {
