@@ -29,8 +29,5 @@ Append `-t` to the command to run test net mode. `node recover -t`. You can use 
 ## Road Map
 - Enable tool to be able to recover second passphrases.
 
-### Help?
-Need help setting up the tool? Email me via lukeliasi@gmail.com and I will reply as soon as possible.
-
 ### Donations
 If this tool worked and recovered overwise lost funds consider donating: **10553198736677725420L**
