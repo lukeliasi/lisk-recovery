@@ -1,3 +1,5 @@
+## ⚠️ This repository is no longer actively maintained
+
 # Lisk Passphrase Recovery Tool
 A tool to recover a single missing word in a Lisk wallet passphrase.
 
